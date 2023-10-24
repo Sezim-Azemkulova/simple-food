@@ -1,0 +1,32 @@
+$title: #363853;
+$text: #31352b;
+$accent: #ff6838;
+$bg: #f9faff;
+$item-bg: #fff;
+$gray: #c2c2c2;
+$silver-100: #ececec;
+
+%rubik-300 {
+  font-family: "Rubik-Light", sans-serif;
+  font-weight: 300;
+}
+
+%rubik-400 {
+  font-family: "Rubik-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%rubik-500 {
+  font-family: "Rubik-Medium", sans-serif;
+  font-weight: 500;
+}
+
+%link {
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: 0.54px;
+  background-color: $accent;
+  color: $item-bg;
+}
