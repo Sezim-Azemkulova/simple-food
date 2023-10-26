@@ -25,16 +25,23 @@
   }
 }
 
+.logo {
+  display: inline-block;
+  &__img {
+    width: 200px;
+    height: 39px;
+  }
+}
+
 .user-navigation {
   display: flex;
-  position: relative;
-  &__link {
-    padding-left: 35px;
+  &__list:not(:first-child) {
+    margin-left: 35px;
   }
   &__num {
     position: absolute;
-    top: -4px;
-    right: -8px;
+    top: 4px;
+    right: 2px;
     width: 14px;
     height: 14px;
     border-radius: 50%;
@@ -42,6 +49,40 @@
     text-align: center;
     background-color: $accent;
     color: $item-bg;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: box-shadow 0.3s, background 0.3s, stroke 0.3s, border-color 0.3s;
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+      background: rgba(255, 122, 80, 0.1);
+    }
+    &:hover {
+      background-color: $accent;
+      path {
+        stroke: $item-bg;
+      }
+      .user-navigation__num {
+        background-color: $item-bg;
+        color: $accent;
+      }
+    }
+    &:active {
+      path {
+        stroke: #111;
+      }
+      border-color: #111;
+      background: #fff2ed;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
   }
 }
 
@@ -77,8 +118,26 @@
     @extend %link;
   }
   &-add {
-    border-bottom: 1px solid;
     color: $title;
+    &:after {
+      content: "";
+      display: block;
+      margin-top: 1px;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.footer__bottom {
+  border-top: 1px solid #000;
+
+  &-copy {
+    padding: 30px 10px;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: $text;
   }
 }
 
