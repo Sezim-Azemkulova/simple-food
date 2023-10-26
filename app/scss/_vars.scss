@@ -30,3 +30,11 @@ $silver-100: #ececec;
   background-color: $accent;
   color: $item-bg;
 }
+
+%text-decoration {
+  position: relative;
+  top: -4px;
+  display: block;
+  height: 1px;
+  background-color: currentColor;
+}
