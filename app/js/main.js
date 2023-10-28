@@ -5,3 +5,4 @@ $(window).scroll(function () {
     $(".header__top").removeClass("fixed");
   }
 });
+var mixer = mixitup(".products-cards");

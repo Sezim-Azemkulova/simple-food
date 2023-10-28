@@ -5,6 +5,7 @@ $bg: #f9faff;
 $item-bg: #fff;
 $gray: #c2c2c2;
 $silver-100: #ececec;
+$black: #000;
 
 %rubik-300 {
   font-family: "Rubik-Light", sans-serif;
@@ -21,7 +22,7 @@ $silver-100: #ececec;
   font-weight: 500;
 }
 
-%link {
+%btn {
   padding: 12px 32px;
   border-radius: 6px;
   font-size: 18px;
