@@ -40,7 +40,9 @@
 
 .logo {
   display: inline-block;
-  &__img {
+  width: 200px;
+  height: 39px;
+  img {
     width: 200px;
     height: 39px;
   }
@@ -61,30 +63,31 @@
     font-size: 10px;
     text-align: center;
     background-color: $accent;
-    color: $item-bg;
+    color: $white;
     transition: background-color 0.3s, color 0.3s;
   }
   &__btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 44px;
     height: 44px;
     border-radius: 5px;
     border: 1px solid transparent;
-    transition: box-shadow 0.3s, background 0.3s, stroke 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, background-color 0.3s, stroke 0.3s,
+      border-color 0.3s;
     &:focus {
       box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-      background: rgba(255, 122, 80, 0.1);
+      background-color: rgba(255, 122, 80, 0.1);
     }
     &:hover {
       background-color: $accent;
       path {
-        stroke: $item-bg;
+        stroke: $white;
       }
       .user-navigation__num {
-        background-color: $item-bg;
+        background-color: $white;
         color: $accent;
       }
     }
@@ -93,7 +96,7 @@
         stroke: $black;
       }
       border-color: $black;
-      background: #fff2ed;
+      background-color: #fff2ed;
       box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
   }
@@ -125,7 +128,7 @@
     }
   }
   &-btn {
-    display: inline-block;
+    border-radius: 5px;
     margin: 20px 34px 0 0;
     @extend %btn;
   }
@@ -140,15 +143,105 @@
 }
 
 .footer-top {
-  display: flex;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
   &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__logo {
+    margin-bottom: 30px;
+  }
+  &__info:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__social-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__social-item:not(:last-child) {
+    margin-right: 2px;
+  }
+  &__social-link {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 39px;
+    background: #ececec;
   }
 }
-.footer__bottom {
+
+.form {
+  &__field {
+    margin-bottom: 12px;
+    max-width: 200px;
+    width: 100%;
+    height: 44px;
+    padding: 11px 13px;
+    border-radius: 5px;
+    border: 1px solid $gray;
+    background: $white;
+    opacity: 0.9;
+    color: $gray;
+    font-size: 14px;
+    line-height: 1.3;
+    transition: border 0.3s, background 0.3s, box-shadow 0.3s, color 0.3;
+    &:focus {
+      border: 1px solid rgba(194, 194, 194, 0);
+      background: $white;
+      box-shadow: 0 0 0 2px $accent;
+      color: $title;
+    }
+    &:hover::placeholder {
+      color: $title;
+      opacity: 0.9;
+      @extend %rubik-400;
+      line-height: 130%; /* 18.2px */
+    }
+  }
+  &__btn {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    padding: 13px 38px 13px 69px;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 0;
+    @extend %btn;
+    @extend %rubik-500;
+    svg {
+      position: absolute;
+      left: 38px;
+    }
+  }
+}
+
+.address-info {
+  &__list {
+    margin-bottom: 15px;
+  }
+  &__item {
+    color: $text;
+    font-size: 16px;
+    line-height: 2;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    svg {
+      padding-right: 7px;
+    }
+  }
+}
+
+.footer-bottom {
   border-top: 1px solid $black;
 
-  &-copy {
+  &__copy {
     padding: 30px 10px;
     font-size: 14px;
     line-height: 1;
@@ -173,23 +266,24 @@
   justify-content: space-between;
   margin-bottom: 45px;
   &__btn {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 13px 32px;
+    padding: 22px 32px 22px 86px;
     border-radius: 5px;
-    background: $item-bg;
+    background: $white;
     box-shadow: 0 0 0 1px $silver-100;
     svg {
-      padding-right: 9px;
+      position: absolute;
+      left: 32px;
     }
   }
 }
 
 .products-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 30px;
   margin-bottom: 60px;
   &__list {
     padding: 20px 15px;
@@ -198,7 +292,7 @@
     border-radius: 5px;
     box-shadow: 0 0 0 1px $silver-100;
     text-align: center;
-    background: $item-bg;
+    background: $white;
     transition: box-shadow 0.3s;
     &:hover {
       box-shadow: 0 0 0 1px $accent;
@@ -229,7 +323,7 @@
     padding: 7px 16px;
     font-size: 14px;
     line-height: 1.3;
-    color: $item-bg;
+    color: $white;
     border-radius: 6px;
     background: $accent;
   }

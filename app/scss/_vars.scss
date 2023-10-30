@@ -2,9 +2,9 @@ $title: #363853;
 $text: #31352b;
 $accent: #ff6838;
 $bg: #f9faff;
-$item-bg: #fff;
 $gray: #c2c2c2;
 $silver-100: #ececec;
+$white: #fff;
 $black: #000;
 
 %rubik-300 {
@@ -23,13 +23,13 @@ $black: #000;
 }
 
 %btn {
+  display: inline-block;
   padding: 12px 32px;
-  border-radius: 6px;
   font-size: 18px;
   line-height: 1.3;
   letter-spacing: 0.54px;
   background-color: $accent;
-  color: $item-bg;
+  color: $white;
 }
 
 %text-decoration {
